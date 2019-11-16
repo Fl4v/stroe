@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from gallery.apps import s3_image_url
+from gallery.apps import S3BucketUtility
 
-# Create your views here.
+# Create your views here
 
 
 def gallery(request):
     return render(request,
                   'gallery.html',
-                  {'s3_images_url': s3_image_url()},
+                  {'s3_images_array': S3BucketUtility().s3_images_array()},
                   )

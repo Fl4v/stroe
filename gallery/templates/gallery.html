@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container">
 
 <h1 class="font-weight-light text-center text-lg-left mt-5 pt-5 mb-0">Pictures Gallery</h1>
@@ -8,7 +9,7 @@
 
     <div class="row text-center text-lg-left">
 
-    {% for image in s3_images_url %}
+    {% for image in s3_images_array %}
 
     <div class="col-lg-3 col-md-4 col-6">
       <a class="d-block mb-4 h-100">
@@ -19,4 +20,5 @@
 
     </div>
 </div>
+
 {% endblock %}
