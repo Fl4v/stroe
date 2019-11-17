@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['STROE_DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -128,7 +128,7 @@ STATIC_ROOT = ''
 
 STATIC_URL = os.path.join(BASE_DIR, 'templates/static/')
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'templates/static/'), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static/'), )
 
 # Custom
 
