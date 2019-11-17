@@ -128,7 +128,7 @@ STATIC_ROOT = ''
 
 STATIC_URL = os.path.join(BASE_DIR, 'templates/static/')
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'templates/static/'), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static/'), )
 
 # Custom
 
