@@ -130,6 +130,6 @@ STATIC_URL = os.path.join(BASE_DIR, 'templates/static/')
 
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'templates/static/'), )
 
-# Apps
+# Custom
 
 S3_BASE_URL = 'https://stroe-django-bucket.s3-eu-west-1.amazonaws.com/'
