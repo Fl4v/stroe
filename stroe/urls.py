@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from main.views import handler404
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls'), name='home'),
-    path('gallery/', include('gallery.urls'), name = 'gallery'),
+    path('gallery/', include('gallery.urls'), name='gallery'),
     path('form/', include('form.urls'), name='form'),
 ]
+
+# Error pages
+
+handler404 = handler404
