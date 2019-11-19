@@ -2,7 +2,7 @@ from django.apps import AppConfig
 from os import environ
 from collections import defaultdict
 
-from stroe.settings import S3_BASE_URL
+S3_BASE_URL = 'https://stroe-django-bucket.s3-eu-west-1.amazonaws.com/'
 
 import boto3
 
