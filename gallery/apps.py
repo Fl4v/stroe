@@ -41,6 +41,3 @@ class S3BucketUtility:
             self.images_array.append(S3_BASE_URL + key['Key'])
 
         return self.images_array
-
-
-print(S3_BASE_URL)
