@@ -1,17 +1,15 @@
+import boto3
 from django.apps import AppConfig
 from os import environ
 from collections import defaultdict
 
 S3_BASE_URL = 'https://stroe-django-bucket.s3-eu-west-1.amazonaws.com/'
 
-import boto3
 
-s3_client = boto3.client(
-    's3',
-    aws_access_key_id=environ['BOTO3_AWS_ACCESS_KEY'],
-    aws_secret_access_key=environ['BOTO3_AWS_SECRECT_KEY'],
-    region_name=environ['AWS_REGION'],
-)
+s3_client = boto3.client('s3', aws_access_key_id=environ['BOTO3_AWS_ACCESS_KEY'],
+                         aws_secret_access_key=environ['BOTO3_AWS_SECRECT_KEY'],
+                         region_name=environ['AWS_REGION'],
+                         )
 
 
 class GalleryConfig(AppConfig):
