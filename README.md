@@ -23,5 +23,5 @@ Portfolio website built using the Dajngo Framework and Bootstrap 4.0 for the tem
 ### Useful Deployment CLI Commands
 
 * `virtualenv [my_project_venv]` # Creates virtual env
-* `source [my_project_venv]/bin/activate` # Activate virtual env
+* `source [my_project_venv]/bin/activate` # Activates virtual env
 * `deactivate` # Whilst in the virtual env, use to deactivate
