@@ -19,3 +19,9 @@ Portfolio website built using the Dajngo Framework and Bootstrap 4.0 for the tem
 * `python3 manage.py startapp [APP Name]` # Creates new app in project folder
 * `python3 manage.py createsuperuser` # Add superuser
 * `python3 manage.py migrate` # Django migration
+
+### Useful Deployment CLI Commands
+
+* `virtualenv [my_project_venv]` # Creates virtual env
+* `source [my_project_venv]/bin/activate` # Activate virtual env
+* `deactivate` # Whilst in the virtual env, use to deactivate
