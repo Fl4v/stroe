@@ -2,4 +2,4 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['stroe.co.uk', '3.248.114.141']
+ALLOWED_HOSTS = ['stroe.co.uk', '178.62.110.246']
