@@ -25,3 +25,22 @@ Portfolio website built using the Dajngo Framework and Bootstrap 4.0 for the tem
 * `virtualenv [my_project_venv]` # Creates virtual env
 * `source [my_project_venv]/bin/activate` # Activates virtual env
 * `deactivate` # Whilst in the virtual env, use to deactivate
+
+### Ngnix
+
+* `sudo nano /etc/nginx/sites-available/{project_name}` # Make changes to your Ngnix file
+* `sudo service nginx status`  # Check Ngnix status
+* `sudo systemctl restart nginx` # Restarts Ngnix
+
+* `sudo nginx -t` # Test Ngnix config
+
+* `sudo tail /var/log/nginx/stroe.access.log` # Check access logs
+* `sudo tail /var/log/nginx/stroe.error.log` # Check error logs
+
+### Gunicron
+
+* `sudo systemctl restart gunicorn` # If change to the Django Application have been made
+* `sudo systemctl status gunicorn` # Check gunicorn service status
+* `sudo systemctl daemon-reload`
+* `sudo systemctl restart gunicorn`
+
