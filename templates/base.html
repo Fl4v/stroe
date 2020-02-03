@@ -50,14 +50,23 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-5 bg-black">
+  <footer class="py-3 bg-black">
     <div class="container">
-      <p class="m-0 text-center text-white small">Copyright &copy; Stroe 2020</p>
+      <div class="row">
+        <div class="col-sm">
+          <a href="https://www.instagram.com/stroesontour/" target="_blank"><i class="text-white fab fa-instagram fa-lg"></i></a>
+        </div>
+        <div class="col-sm">
+          <p class="m-0 text-center text-white small">Copyright &copy; Stroe 2020</p>
+        </div>
+        <div class="col-sm">
+        </div>
+      </div>
     </div>
-    <!-- /.container -->
   </footer>
   {% block footer_scripts %}
   <!-- Bootstrap core JavaScript -->
+  <script src="https://kit.fontawesome.com/f75042a8fd.js" crossorigin="anonymous"></script>
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   {% endblock footer_scripts %}
