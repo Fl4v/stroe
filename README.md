@@ -2,45 +2,51 @@
 
 Portfolio website built using the Dajngo Framework and Bootstrap 4.0 for the templating.
 
-## Installation
+Link to website: [stroe.co.uk](https://stroe.co.uk)
 
-*Python Version:* 3.8.0
-
-1. Install the software: `pip3 install -r requirements.txt`
+Images from the Media page are stored on a [S3 Bucket](https://aws.amazon.com/s3/)
+Webisite is hosted on [DigitalOcean](https://www.digitalocean.com/)
 
 ## Documentation links
 
-* To customize the content, design, and features of the site see [Django](https://docs.djangoproject.com/).
-* For HTML template design see [Bootstrap](https://getbootstrap.com/).
+* To customize the content, design, and features of the site see [Django](https://docs.djangoproject.com/)
+* For HTML template design see [Bootstrap](https://getbootstrap.com/)
 
-### Useful Django Commands
+### Run Development Environment
 
-`django-admin startproject [Project Name]` # Creates new project
-`python3 manage.py startapp [APP Name]` # Creates new app in project folder
-`python3 manage.py createsuperuser` # Add superuser
-`python3 manage.py migrate` # Django migration
-`python3 manage.py runserver --settings stroe.settings.prod` # Run server with specific settings file
-`python3 manage.py collectstatic` # Collects all static files, including the admin  panel and places then in the static dir
+Build docker images
+```
+docker-compose build
+```
 
-### Useful Deployment CLI Commands
+Run docker containers
+```
+docker-compose up
+```
 
-`virtualenv [my_project_venv]` # Creates virtual env
-`source [my_project_venv]/bin/activate` # Activates virtual env
-`deactivate` # Whilst in the virtual env, use to deactivate
+If the containers are running properly, you can access the website at `0.0.0.0`
 
-### Ngnix
+### Useful CLI Commands
 
-`sudo nano /etc/nginx/sites-available/{project_name}` # Make changes to your Ngnix file
-`sudo service nginx status`  # Check Ngnix status
-`sudo systemctl restart nginx` # Restarts Ngnix
-`sudo nginx -t` # Test Ngnix config
-`sudo tail /var/log/nginx/{project_name}.access.log` # Check access logs
-`sudo tail /var/log/nginx/{project_name}.error.log` # Check error logs
+#### Ngnix
+```
+sudo nano /etc/nginx/sites-available/{project_name} # Access your 
+sudo service nginx status  # Check Nginx status
+sudo systemctl restart nginx # Restarts Nginx
+sudo nginx -t # Test Nginx config
+sudo tail /var/log/nginx/{project_name}.access.log # Check access logs
+sudo tail /var/log/nginx/{project_name}.error.log # Check error logs
+```
+#### Gunicron
+```
+sudo systemctl restart gunicorn # If change to the Django Application have been made
+sudo systemctl status gunicorn # Check gunicorn service status
+sudo systemctl daemon-reload
+```
 
-### Gunicron
+#### To-Do
 
-`sudo systemctl restart gunicorn` # If change to the Django Application have been made
-`sudo systemctl status gunicorn` # Check gunicorn service status
-`sudo systemctl daemon-reload`
-`sudo systemctl restart gunicorn`
-
+- [ ] Finish docker-compose for production environment
+- [ ] Add Gunicorn
+- [ ] Add Nginx
+- [ ] Add Certbot for SSL
