@@ -15,6 +15,26 @@ Webisite is hosted on [DigitalOcean](https://www.digitalocean.com/)
 
 ### Run Development Environment
 
+Set your `.env.dev` file
+
+Example
+
+```
+DJANGO_SECRET_KEY=YOUR_SECRET_KEY
+DJANGO_DEBUG=0
+DJANGO_ALLOWED_HOSTS=0.0.0.0
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=DATABASE_NAME
+SQL_USER=DATABASE_USER
+SQL_PASSWORD=DATABASE_PASSWORD
+SQL_HOST=postgresql_db
+SQL_PORT=5432
+DATABASE=postgres
+POSTGRES_USER=DATABASE_USER
+POSTGRES_PASSWORD=DATABASE_PASSWORD
+POSTGRES_DB=DATABASE_NAME
+```
+
 Build docker images
 ```
 docker-compose build
