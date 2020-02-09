@@ -1,15 +1,7 @@
-import boto3
 from django.apps import AppConfig
-from os import getenv
 from collections import defaultdict
 
-S3_BASE_URL = 'https://stroe-django-bucket.s3-eu-west-1.amazonaws.com/'
-
-
-s3_client = boto3.client('s3', aws_access_key_id=getenv('BOTO3_AWS_ACCESS_KEY'),
-                         aws_secret_access_key=getenv('BOTO3_AWS_SECRECT_KEY'),
-                         region_name=getenv('AWS_REGION'),
-                         )
+from stroe.settings.base import S3_BUCKET, s3_client
 
 
 class GalleryConfig(AppConfig):
@@ -25,7 +17,7 @@ class S3BucketUtility:
             Bucket='stroe-django-bucket')['Contents']
 
         for counter, key in enumerate(bucket_content[1:], start=5):
-            self.images_dict[counter // 5].append(S3_BASE_URL + key['Key'])
+            self.images_dict[counter // 5].append(S3_BUCKET + key['Key'])
 
         return self.images_dict
 
@@ -33,9 +25,9 @@ class S3BucketUtility:
         self.images_array = []
 
         bucket_content = s3_client.list_objects(
-            Bucket='stroe-django-bucket')['Contents']
+            Bucket='stroe-django-bucket', Marker='wedding_pictures/')['Contents']
 
-        for key in bucket_content[1:]:
-            self.images_array.append(S3_BASE_URL + key['Key'])
+        for key in bucket_content:
+            self.images_array.append(S3_BUCKET + key['Key'])
 
         return self.images_array

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import logging.config
+import boto3
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -160,7 +161,23 @@ logging.config.dictConfig({
     'loggers': {
         '': {
             'level': LOGLEVEL,
-            'handlers': ['console',],
+            'handlers': [
+                'console',
+                ],
         },
     },
 })
+
+# AWS
+
+S3_BUCKET = 'https://stroe-django-bucket.s3-eu-west-1.amazonaws.com/'
+
+s3_client = boto3.client('s3', aws_access_key_id=os.getenv('BOTO3_AWS_ACCESS_KEY'),
+                         aws_secret_access_key=os.getenv('BOTO3_AWS_SECRECT_KEY'),
+                         region_name=os.getenv('AWS_REGION'),
+                         )
+
+s3_resource = boto3.resource('s3', aws_access_key_id=os.getenv('BOTO3_AWS_ACCESS_KEY'),
+                            aws_secret_access_key=os.getenv('BOTO3_AWS_SECRECT_KEY'),
+                            region_name=os.getenv('AWS_REGION'),
+                            )
