@@ -17,7 +17,8 @@ import boto3
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
+print(PROJECT_DIR)
+print(BASE_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -44,6 +45,9 @@ INSTALLED_APPS = [
     'main',
     'gallery',
     'form',
+
+    # Form
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -176,8 +180,3 @@ s3_client = boto3.client('s3', aws_access_key_id=os.getenv('BOTO3_AWS_ACCESS_KEY
                          aws_secret_access_key=os.getenv('BOTO3_AWS_SECRECT_KEY'),
                          region_name=os.getenv('AWS_REGION'),
                          )
-
-s3_resource = boto3.resource('s3', aws_access_key_id=os.getenv('BOTO3_AWS_ACCESS_KEY'),
-                            aws_secret_access_key=os.getenv('BOTO3_AWS_SECRECT_KEY'),
-                            region_name=os.getenv('AWS_REGION'),
-                            )

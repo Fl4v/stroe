@@ -12,7 +12,7 @@ def gallery(request):
 
     try:
         images = page_gallery.page(page)
-    
+
     except PageNotAnInteger:
         images = page_gallery.page(1)
 
